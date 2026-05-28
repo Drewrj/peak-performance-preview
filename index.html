@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peak Performance Construction | Roofing & Remodeling in Garland, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand-dark:#151515;
+  --brand-green:#327461;
+  --brand-lime:#77dd0e;
+  --brand-accent:#E8B67F;
+  --text-primary:#1a1a1a;
+  --text-secondary:#555;
+  --text-light:#fff;
+  --bg-light:#f8f7f5;
+  --bg-white:#fff;
+  --star-gold:#fbbf24;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text-primary);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;transition:all .4s ease}
+.nav::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.6) 0%,transparent 100%);z-index:-1;transition:opacity .4s}
+.nav-scrolled::before{opacity:0}
+.nav-scrolled{background:var(--bg-white);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:10px 5%}
+.nav-logo img{height:52px;width:auto;transition:all .3s;filter:brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.nav-scrolled .nav-logo img{filter:none;height:44px}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:var(--text-light);text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.3px;transition:color .3s}
+.nav-scrolled .nav-links a{color:var(--text-primary)}
+.nav-links a:hover{opacity:.8}
+.nav-cta{background:var(--brand-green);color:#fff!important;padding:10px 22px;border-radius:6px;font-weight:600;transition:background .3s}
+.nav-cta:hover{background:#285e50}
+
+/* HERO */
+.hero{position:relative;height:92vh;min-height:600px;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://pub.hyperagent.com/api/published/pbf01KSR5XS01_ZE9E0V221M3A2TAZ/hero-drone.jpg');background-size:cover;background-position:center}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(21,21,21,.82) 0%,rgba(50,116,97,.55) 50%,rgba(21,21,21,.7) 100%)}
+.hero-content{position:relative;z-index:2;max-width:720px;padding:0 5%;color:#fff}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:8px 18px;border-radius:40px;font-size:13px;font-weight:500;margin-bottom:28px;color:rgba(255,255,255,.9)}
+.hero-badge svg{width:16px;height:16px;color:var(--star-gold)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,58px);font-weight:700;line-height:1.12;margin-bottom:20px}
+.hero p{font-size:18px;line-height:1.7;opacity:.88;max-width:540px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--brand-green);color:#fff;padding:14px 30px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;transition:all .3s;border:none;cursor:pointer}
+.btn-primary:hover{background:#285e50;transform:translateY(-1px)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;padding:14px 30px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,.4);transition:all .3s}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+
+/* STATS BAR */
+.stats-bar{background:var(--brand-dark);padding:0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:1200px;margin:0 auto}
+.stat-item{padding:32px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
+.stat-item:last-child{border-right:none}
+.stat-number{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--brand-lime);margin-bottom:4px}
+.stat-label{font-size:13px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;font-weight:500}
+
+/* SERVICES */
+.services{padding:90px 5%;background:var(--bg-light)}
+.section-header{text-align:center;max-width:620px;margin:0 auto 56px}
+.section-label{font-size:13px;text-transform:uppercase;letter-spacing:2px;color:var(--brand-green);font-weight:600;margin-bottom:12px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,40px);font-weight:700;line-height:1.2;margin-bottom:16px}
+.section-subtitle{color:var(--text-secondary);font-size:16px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.service-card{border-radius:12px;overflow:hidden;background:var(--bg-white);box-shadow:0 4px 24px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+.service-card-img{height:220px;background-size:cover;background-position:center;position:relative}
+.service-card-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(0,0,0,.4))}
+.service-card-body{padding:24px}
+.service-card-body h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.service-card-body p{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+/* PROJECTS GALLERY */
+.projects{padding:90px 5%;background:var(--bg-white)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1200px;margin:0 auto}
+.gallery-item{border-radius:10px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.6));display:flex;align-items:flex-end;padding:20px;opacity:0;transition:opacity .3s}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay span{color:#fff;font-size:14px;font-weight:600}
+
+/* TESTIMONIALS */
+.testimonials{padding:90px 5%;background:var(--brand-dark);position:relative}
+.testimonials::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--brand-green),var(--brand-lime))}
+.testimonials .section-label{color:var(--brand-lime)}
+.testimonials .section-title{color:#fff}
+.testimonials .section-subtitle{color:rgba(255,255,255,.5)}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.review-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:32px;position:relative}
+.review-stars{display:flex;gap:3px;margin-bottom:16px}
+.review-stars svg{width:18px;height:18px;color:var(--star-gold);fill:var(--star-gold);stroke:var(--star-gold)}
+.review-text{color:rgba(255,255,255,.8);font-size:15px;line-height:1.7;margin-bottom:20px;font-style:italic}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:var(--brand-green);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px}
+.review-name{font-weight:600;color:#fff;font-size:14px}
+.review-source{font-size:12px;color:rgba(255,255,255,.4)}
+.review-rating-summary{text-align:center;margin-bottom:48px}
+.rating-big{font-family:'Playfair Display',serif;font-size:64px;font-weight:700;color:#fff;line-height:1}
+.rating-stars-big{display:flex;justify-content:center;gap:4px;margin:8px 0}
+.rating-stars-big svg{width:24px;height:24px;color:var(--star-gold);fill:var(--star-gold);stroke:var(--star-gold)}
+.rating-count{color:rgba(255,255,255,.5);font-size:14px}
+
+/* ABOUT */
+.about{padding:90px 5%;background:var(--bg-light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1200px;margin:0 auto;align-items:center}
+.about-img{border-radius:12px;overflow:hidden;position:relative}
+.about-img img{width:100%;height:auto;display:block}
+.about-img-badge{position:absolute;bottom:24px;left:24px;background:var(--brand-green);color:#fff;padding:16px 24px;border-radius:10px}
+.about-img-badge .badge-number{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;line-height:1}
+.about-img-badge .badge-text{font-size:12px;text-transform:uppercase;letter-spacing:1px;opacity:.8}
+.about-content h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,38px);font-weight:700;margin-bottom:20px;line-height:1.2}
+.about-content p{color:var(--text-secondary);margin-bottom:24px;line-height:1.7}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.about-feature{display:flex;align-items:flex-start;gap:12px}
+.about-feature-icon{width:40px;height:40px;border-radius:8px;background:rgba(50,116,97,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.about-feature-icon svg{width:20px;height:20px;color:var(--brand-green)}
+.about-feature h4{font-size:14px;font-weight:600;margin-bottom:2px}
+.about-feature p{font-size:13px;color:var(--text-secondary);margin:0}
+
+/* CONTACT */
+.contact{padding:90px 5%;background:var(--bg-white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1100px;margin:0 auto}
+.contact-form{background:var(--bg-light);padding:40px;border-radius:12px}
+.contact-form h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:8px}
+.contact-form p{color:var(--text-secondary);font-size:14px;margin-bottom:28px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--text-primary)}
+.form-group input,.form-group textarea{width:100%;padding:12px 16px;border:1px solid #ddd;border-radius:8px;font-size:14px;font-family:inherit;transition:border-color .3s;background:#fff}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--brand-green)}
+.form-group textarea{height:120px;resize:vertical}
+.form-submit{width:100%;padding:14px;background:var(--brand-green);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:background .3s}
+.form-submit:hover{background:#285e50}
+.contact-info{display:flex;flex-direction:column;justify-content:center}
+.contact-info-card{background:var(--brand-dark);border-radius:12px;padding:40px;color:#fff}
+.contact-info-card h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:24px}
+.contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px}
+.contact-detail svg{width:20px;height:20px;color:var(--brand-lime);flex-shrink:0;margin-top:2px}
+.contact-detail-text{font-size:14px}
+.contact-detail-text strong{display:block;margin-bottom:4px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5)}
+.contact-detail-text a{color:#fff;text-decoration:none}
+.contact-detail-text a:hover{color:var(--brand-lime)}
+.contact-hours{margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1)}
+.contact-hours h4{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5);margin-bottom:12px}
+.contact-hours p{font-size:14px;color:rgba(255,255,255,.8);line-height:1.8}
+
+/* CTA */
+.cta{position:relative;padding:80px 5%;text-align:center;background:var(--brand-dark)}
+.cta h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:#fff;margin-bottom:16px}
+.cta p{color:rgba(255,255,255,.6);font-size:16px;max-width:500px;margin:0 auto 32px}
+.cta .btn-primary{font-size:16px;padding:16px 36px}
+
+/* FOOTER */
+.footer{background:#0a0a0a;color:rgba(255,255,255,.5);padding:48px 5% 24px}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;max-width:1200px;margin:0 auto;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);flex-wrap:wrap;gap:32px}
+.footer-brand{max-width:320px}
+.footer-brand img{height:48px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+.footer-brand p{font-size:13px;line-height:1.7}
+.footer-contact-col h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:14px}
+.footer-contact-col p,.footer-contact-col a{font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;display:block;margin-bottom:6px;line-height:1.6}
+.footer-contact-col a:hover{color:var(--brand-lime)}
+.footer-social{display:flex;gap:12px;margin-top:12px}
+.footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);transition:all .3s;text-decoration:none}
+.footer-social a:hover{background:var(--brand-green);color:#fff}
+.footer-social a svg{width:16px;height:16px}
+.footer-bottom{max-width:1200px;margin:20px auto 0;display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:8px}
+
+/* MOBILE CTA */
+.mobile-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--brand-green);padding:14px 20px}
+.mobile-cta a{display:flex;align-items:center;justify-content:center;gap:8px;color:#fff;text-decoration:none;font-weight:700;font-size:16px}
+.mobile-cta a svg{width:20px;height:20px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .mobile-cta{display:block}
+  body{padding-bottom:56px}
+  .hero{height:80vh;min-height:500px}
+  .hero h1{font-size:32px}
+  .hero p{font-size:16px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .contact-grid{grid-template-columns:1fr}
+  .about-features{grid-template-columns:1fr}
+  .footer-top{flex-direction:column}
+  .hero-actions{flex-direction:column}
+  .btn-primary,.btn-outline{width:100%;justify-content:center}
+}
+@media(max-width:480px){
+  .gallery-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a href="#" class="nav-logo">
+    <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XRKZ_15BRM4M98870N8B9/logo-transparent.png" alt="Peak Performance Construction" loading="eager">
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:2142476697" class="nav-cta">(214) 247-6697</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i data-lucide="star"></i>
+      4.9 Stars · 74 Google Reviews
+    </div>
+    <h1>Garland's Trusted Name in Roofing & Remodeling</h1>
+    <p>For 20 years, we've been transforming homes across the DFW metroplex — from complete roof replacements to whole-home interior remodels. Your vision, our craftsmanship.</p>
+    <div class="hero-actions">
+      <a href="tel:2142476697" class="btn-primary"><i data-lucide="phone"></i> (214) 247-6697</a>
+      <a href="#contact" class="btn-outline"><i data-lucide="message-square"></i> Get a Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">Years in Business</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4.9</div>
+      <div class="stat-label">Star Rating</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">74</div>
+      <div class="stat-label">Google Reviews</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">DFW</div>
+      <div class="stat-label">Service Area</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Comprehensive Roofing & Remodeling</h2>
+    <p class="section-subtitle">From the roof down to the kitchen — we handle every phase of your home improvement project.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-card-img" style="background-image:url('https://pub.hyperagent.com/api/published/pbf01KSR5XV03_1Z647MKFQY9AQGDJ/seagoville-roof.jpg')"></div>
+      <div class="service-card-body">
+        <h3>Roofing</h3>
+        <p>Complete roof replacements, repairs, and inspections using high-quality materials from GAF, Owens Corning, CertainTeed, and IKO.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img" style="background-image:url('https://pub.hyperagent.com/api/published/pbf01KSR5XT1C_RCFFCV68TSV4NKP4/kitchen-remodel.jpg')"></div>
+      <div class="service-card-body">
+        <h3>Kitchen Remodeling</h3>
+        <p>Custom kitchen renovations including cabinetry, countertops, backsplash, flooring, and complete layout redesigns.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img" style="background-image:url('https://pub.hyperagent.com/api/published/pbf01KSR5XTRR_FPZ21ENNVR9FJTX7/colleyville-bath.jpg')"></div>
+      <div class="service-card-body">
+        <h3>Bathroom Remodeling</h3>
+        <p>Full bathroom renovations from tile work and fixtures to custom showers, tubs, and vanity installations across the metroplex.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img" style="background-image:url('https://pub.hyperagent.com/api/published/pbf01KSR5XTBD_3GS74CPG7WZEM3T3/lobby.jpg')"></div>
+      <div class="service-card-body">
+        <h3>Whole Home Remodel</h3>
+        <p>Complete interior transformations — we take older homes and turn them into the space you've always wanted, floor to ceiling.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img" style="background-image:url('https://pub.hyperagent.com/api/published/pbf01KSR5XV9D_C6F7D76NHSFVVW5B/allen-roof.jpg')"></div>
+      <div class="service-card-body">
+        <h3>Storm Damage Repair</h3>
+        <p>Fast response after hail and storm damage. We work with your insurance company and get your roof back to new, efficiently.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img" style="background-image:url('https://pub.hyperagent.com/api/published/pbf01KSR5XVN1_YZ7B4EYDHD44D6X4/dallas-roof.jpg')"></div>
+      <div class="service-card-body">
+        <h3>Gutters & Exteriors</h3>
+        <p>Gutter installation, siding, and exterior work to protect and elevate the look of your home year-round.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-header">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Recent Projects</h2>
+    <p class="section-subtitle">Real work for real homeowners across Garland, Allen, Sachse, Colleyville, Seagoville, and beyond.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XSC9_7NDVVKGT7P315AA3/kitchen-backsplash.jpg" alt="Kitchen backsplash installation in Garland" loading="lazy">
+      <div class="gallery-overlay"><span>Kitchen Backsplash — Parkwood Dr</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XSPN_Z0VNDPRQ9HYDH9AX/master-bathroom.jpg" alt="Master bathroom remodel" loading="lazy">
+      <div class="gallery-overlay"><span>Master Bathroom — Parkwood Dr</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XVX9_2ZEY89TXBPV33J8P/sachse-bathroom.jpg" alt="Bathroom renovation in Sachse" loading="lazy">
+      <div class="gallery-overlay"><span>Bathroom Renovation — Sachse</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XW5P_VHXA9PFKZ9T1JKPG/progress-1.jpg" alt="Home remodel in progress" loading="lazy">
+      <div class="gallery-overlay"><span>Interior Remodel in Progress</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XWG0_ZFCR9Z45Z13PRM4N/progress-2.jpg" alt="Construction project" loading="lazy">
+      <div class="gallery-overlay"><span>Active Construction</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XX59_CVRS9Z1HCKBW182F/progress-5.jpg" alt="Project site" loading="lazy">
+      <div class="gallery-overlay"><span>Project Site — DFW Metro</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="reviews">
+  <div class="section-header">
+    <div class="section-label">What Our Clients Say</div>
+    <h2 class="section-title">Reviews That Speak for Themselves</h2>
+  </div>
+  <div class="review-rating-summary">
+    <div class="rating-big">4.9</div>
+    <div class="rating-stars-big">
+      <i data-lucide="star"></i>
+      <i data-lucide="star"></i>
+      <i data-lucide="star"></i>
+      <i data-lucide="star"></i>
+      <i data-lucide="star"></i>
+    </div>
+    <div class="rating-count">Based on 74 Google Reviews</div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">
+        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+      </div>
+      <p class="review-text">"Peak Performance Construction recently roofed my home after a 2025 hail storm. Good experience from start to finish. The team communicated clearly throughout the project, showed up when they said they would, and completed the work efficiently in one day."</p>
+      <div class="review-author">
+        <div class="review-avatar">B</div>
+        <div>
+          <div class="review-name">B Hunter</div>
+          <div class="review-source">Google Review · 3 weeks ago</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">
+        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+      </div>
+      <p class="review-text">"AWSOME JOB! We did a whole home interior remodel on a 38 year old home. Dani and Rene did a great job on helping us thru the remodel process. They helped turn our house into the home we dreamed of. They are our contractors for life."</p>
+      <div class="review-author">
+        <div class="review-avatar">K</div>
+        <div>
+          <div class="review-name">K. Joe House</div>
+          <div class="review-source">Google Review · 3 months ago</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">
+        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+      </div>
+      <p class="review-text">"He was very knowledgeable and professional! I would most definitely recommend him for services."</p>
+      <div class="review-author">
+        <div class="review-avatar">M</div>
+        <div>
+          <div class="review-name">Margie Chatman</div>
+          <div class="review-source">Google Review · 2 months ago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XWXB_CRJ408VCG1VHMFTP/progress-3.jpg" alt="Peak Performance Construction crew at work" loading="lazy">
+      <div class="about-img-badge">
+        <div class="badge-number">20+</div>
+        <div class="badge-text">Years Serving DFW</div>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-label">About Us</div>
+      <h2>Built on Trust. Driven by Results.</h2>
+      <p>Since 2006, Peak Performance Construction has been a family-owned operation serving the Dallas-Fort Worth metroplex. Led by Rene and Dani, our crew treats every project — from a single roof repair to a complete home transformation — with the same dedication and attention to detail.</p>
+      <p>We're proud partners of GAF, Owens Corning, CertainTeed, and IKO, using only premium materials to protect your investment. Our 4.9-star reputation isn't built on promises — it's built on the work we leave behind.</p>
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="about-feature-icon"><i data-lucide="shield-check"></i></div>
+          <div>
+            <h4>Licensed & Insured</h4>
+            <p>TX License #AEC12260</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i data-lucide="award"></i></div>
+          <div>
+            <h4>Premium Materials</h4>
+            <p>GAF, Owens Corning, IKO</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i data-lucide="users"></i></div>
+          <div>
+            <h4>Family Owned</h4>
+            <p>Since 2006</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i data-lucide="map-pin"></i></div>
+          <div>
+            <h4>Local Experts</h4>
+            <p>Garland & DFW metro</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Ready to Start Your Project?</h2>
+    <p class="section-subtitle">Send us a message and we'll get back to you with a free estimate.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-form">
+      <h3>Request a Free Estimate</h3>
+      <p>Tell us about your project and we'll get back to you quickly.</p>
+      <form action="mailto:info@peakperformanceconstruction.com" method="POST" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell Us About Your Project</label>
+          <textarea id="message" name="message" placeholder="What kind of work are you looking for?"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <div class="contact-info-card">
+        <h3>Peak Performance Construction</h3>
+        <div class="contact-detail">
+          <i data-lucide="phone"></i>
+          <div class="contact-detail-text">
+            <strong>Phone</strong>
+            <a href="tel:2142476697">(214) 247-6697</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i data-lucide="map-pin"></i>
+          <div class="contact-detail-text">
+            <strong>Address</strong>
+            2314 S Jupiter Rd Ste 601<br>Garland, TX 75041
+          </div>
+        </div>
+        <div class="contact-detail">
+          <i data-lucide="shield-check"></i>
+          <div class="contact-detail-text">
+            <strong>License</strong>
+            TX #AEC12260
+          </div>
+        </div>
+        <div class="contact-hours">
+          <h4>Business Hours</h4>
+          <p>Monday – Friday: 7:00 AM – 7:00 PM<br>
+          Saturday: 10:00 AM – 4:00 PM<br>
+          Sunday: 10:00 AM – 4:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Let's Build Something Great Together</h2>
+  <p>20 years of experience. 74 five-star reviews. One call to get started.</p>
+  <a href="tel:2142476697" class="btn-primary"><i data-lucide="phone"></i> Call (214) 247-6697</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="https://pub.hyperagent.com/api/published/pbf01KSR5XRKZ_15BRM4M98870N8B9/logo-transparent.png" alt="Peak Performance Construction">
+      <p>Family-owned roofing and remodeling contractor serving Garland and the DFW metroplex since 2006. Licensed, insured, and committed to quality.</p>
+    </div>
+    <div class="footer-contact-col">
+      <h4>Contact</h4>
+      <a href="tel:2142476697">(214) 247-6697</a>
+      <p>2314 S Jupiter Rd Ste 601<br>Garland, TX 75041</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/351939064870076" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+      </div>
+    </div>
+    <div class="footer-contact-col">
+      <h4>Services</h4>
+      <p>Roofing</p>
+      <p>Kitchen Remodeling</p>
+      <p>Bathroom Remodeling</p>
+      <p>Whole Home Remodel</p>
+      <p>Storm Damage Repair</p>
+      <p>Gutters & Exteriors</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Peak Performance Construction. All rights reserved.</span>
+    <span>Serving Garland, Allen, Sachse, Colleyville, Seagoville & DFW</span>
+  </div>
+</footer>
+
+<!-- MOBILE CTA -->
+<div class="mobile-cta">
+  <a href="tel:2142476697"><i data-lucide="phone"></i> Call (214) 247-6697</a>
+</div>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('nav-scrolled', window.scrollY > 80);
+});
+
+// Initialize Lucide icons
+lucide.createIcons();
+
+// Force gold fill+stroke on all star icons
+document.querySelectorAll('.review-stars svg, .rating-stars-big svg, .hero-badge svg').forEach(s => {
+  s.style.fill = 'currentColor';
+  s.style.stroke = 'currentColor';
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
